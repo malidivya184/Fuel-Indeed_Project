@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Booking Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: url('./images/backgroundImg.jpg') no-repeat center center/cover;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            color: #fff;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .navbar .nav-links a:hover {
+            color: #4caf50;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .big-heading {
+            font-size: 36px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .content-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>Fuel Booking Platform</h2>
+        <div class="nav-links">
+            <a href="admin_login.html"><i class="fas fa-user-shield"></i> Admin</a>
+            <a href="login_fuel_station.html"><i class="fas fa-gas-pump"></i> Fuel Station</a>
+            <a href="delivery_person_login.html"><i class="fas fa-truck"></i> Delivery Person</a>
+            <a href="User_login.html"><i class="fas fa-user"></i> User</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1 class="big-heading">Online Fuel Booking Platform</h1>
+        <div class="content-box">
+            <h2>About Our Services</h2>
+            <p>Welcome to our online fuel booking platform. We provide a seamless and convenient way to book fuel for delivery directly to your location.</p>
+            <ul>
+                <li>Easy online booking</li>
+                <li>Fast and reliable delivery</li>
+                <li>Competitive pricing</li>
+                <li>24/7 customer support</li>
+            </ul>
+            <p>Join us and experience hassle-free fuel delivery at your fingertips.</p>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2025 Fuel Booking Platform | All Rights Reserved
+    </div>
+</body>
+</html>

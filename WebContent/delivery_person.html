@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Delivery Person</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: #4caf50;
+        }
+        .dashboard {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+        .sidebar_user_info {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #575757;
+        }
+        .user_profle_side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .user_img img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+        .user_info {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .user_info h6 {
+            margin: 0;
+            font-size: 16px;
+        }
+        .user_info p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        .user_info .online_animation {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #4caf50;
+            border-radius: 50%;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+        .dashboard .menu-item {
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        .dashboard .menu-item:hover {
+            background-color: #575757;
+        }
+        .dashboard .menu-item i {
+            margin-right: 10px;
+        }
+        .dashboard .menu-item span {
+            font-size: 18px;
+        }
+        .dashboard .menu-item a {
+            color: #fff; /* Ensure link text is white */
+            text-decoration: none; /* Remove underline from links */
+            display: block; /* Ensure the link covers the full menu item area */
+        }
+        .dashboard .menu-item a:hover {
+            color: #4caf50; /* Optional: change color on hover */
+        }
+        .dashboard .menu-item.admin::before {
+            content: '\f406'; /* Font Awesome user icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 10px;
+        }
+        .dashboard .menu-item.fuel-station::before {
+            content: '\f5b0'; /* Font Awesome gas pump icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 10px;
+        }
+        .dashboard .menu-item.delivery-person::before {
+            content: '\f0d1'; /* Font Awesome truck icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 10px;
+        }
+        .dashboard .menu-item.user::before {
+            content: '\f007'; /* Font Awesome user icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 10px;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 250px; /* Adjusted for the width of the sidebar */
+            width: calc(100% - 250px);
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px; /* Smaller font size for navbar items */
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #4caf50;
+        }
+        .navbar .nav-item {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .nav-item i {
+            margin-right: 5px;
+        }
+        .content {
+            margin-left: 250px; /* Adjusted for the width of the sidebar */
+            padding: 20px;
+            margin-top: 70px; /* Adjusted for the height of the navbar */
+            flex: 1;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            padding: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar_user_info">
+            <div class="user_profle_side">
+                <div class="user_img">
+                    <img class="img-responsive" src="./images/image1.png" alt="User Image">
+                </div>
+                <div class="user_info">
+                    <h6>Fuel Booking Platform</h6>
+                    <p><span class="online_animation"></span> Online</p>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item admin">
+            <span><a href="admin_login.html">Admin</a></span>
+        </div>
+        <div class="menu-item fuel-station">
+            <span><a href="login_fuel_station.html">Fuel Station</a></span>
+        </div>
+        <div class="menu-item delivery-person">
+            <span><a href="delivery_person_login.html">Delivery Person</a></span>
+        </div>
+        <div class="menu-item user">
+            <span><a href="User_login.html">User</a></span>
+        </div>
+    </div>
+    <div class="navbar">
+        <a href="Update_fuel_update.html" class="nav-item"><i class="fas fa-gas-pump"></i> Update Fuel Availability</a>
+        <a href="update_fuel_rate.html" class="nav-item"><i class="fas fa-dollar-sign"></i> Update Fuel Rates</a>
+        <a href="delivery_person.html" class="nav-item"><i class="fas fa-truck"></i> Delivery Person</a>
+        <a href="pending_bookings.jsp" class="nav-item"><i class="fas fa-clock"></i> Pending Bookings</a>
+        <a href="Fuel_Station_Assign_Bookings.jsp" class="nav-item"><i class="fas fa-calendar-day"></i> Assign Bookings</a>
+        <a href="View_Fuelstation_Delivered_Bookings.jsp" class="nav-item"><i class="fas fa-check-circle"></i> Delivered Bookings</a>
+        <a href="View_Rejected_Bookings.jsp" class="nav-item"><i class="fas fa-times-circle"></i> Rejected Bookings</a>
+        <a href="Fuelstation_changepassword.html" class="nav-item"><i class="fas fa-key"></i> Change Password</a>
+        <a href="index.html" class="nav-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+    <div class="content">
+        <div class="heading">Manage Delivery Person Information</div>
+        <div class="button-container">
+            <a href="add_delivery_person.html"><button class="btn">Add Delivery Person</button></a>
+            <a href="view_delivery_person.jsp"><button class="btn">View Delivery Person</button></a>
+        </div>
+    </div>
+</body>
+</html>

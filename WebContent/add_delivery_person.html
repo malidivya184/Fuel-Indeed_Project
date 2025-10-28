@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Station Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa; /* Light blue background for a fresh look */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff; /* White background for the form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 90%;
+        }
+        h3 {
+            text-align: center;
+            color: #00796b; /* Teal color for the heading */
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="submit"],
+        .btn-dashboard {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"] {
+            background-color: #00796b; /* Teal background for the submit button */
+        }
+        input[type="submit"]:hover {
+            background-color: #004d40; /* Darker teal on hover */
+        }
+        .btn-dashboard {
+            background-color: #0288d1; /* Blue background for the dashboard button */
+            margin-top: 10px; /* Space between submit button and dashboard button */
+        }
+        .btn-dashboard:hover {
+            background-color: #01579b; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Add Delivery Person</h3>
+        <form action="Add_delivery_person" method="post">
+            <input type="text" name="dname" placeholder="Enter name" required>
+            <input type="text" name="dcity" placeholder="Enter City" required>
+            <input type="text" name="dcontact" placeholder="Enter Contact" required>
+            <input type="text" name="daddress" placeholder="Enter Address" required>
+            <input type="text" name="dpincode" placeholder="Enter Pincode" required>
+            <input type="text" name="demail" placeholder="Enter Email" required>
+            <input type="password" name="dpassword" placeholder="Enter Password" required>
+            <input type="submit" value="Add">
+            <a href="fuel_station_Dashboard.html"><button type="button" class="btn-dashboard">Go to Dashboard</button></a>
+        </form>
+    </div>
+</body>
+</html>
